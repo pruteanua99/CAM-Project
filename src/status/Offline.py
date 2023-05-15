@@ -1,9 +1,9 @@
 import requests
 import time
-from recognition.recognition import recunoastere
-from geolocation.location import getLocationDetails
-from comunication.mail import send_email
-from snapShoting import Pozare
+from recognition.recognition import recognition as r
+from geolocation.location import location as loc
+from comunication.mail import mailing as m
+from snapShoting.pozare import snapshot as s
 
 
 def Offline():
@@ -14,9 +14,10 @@ def Offline():
             # verificare ip curent
             print('Conexiune la internet detectată.')
 
-            Pozare()
-            if not recunoastere():
-                send_email(r"D:\NASA\CAM_p\win.png", getLocationDetails())
+            s.Pozare()
+            if not r.recunoastere():
+                m.send_email(r"D:\NASA\CAM_p\win.png",
+                             loc.getLocationDetails())
 
             # trimitere pe email poza + locatie estimativa
             break
