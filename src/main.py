@@ -1,10 +1,8 @@
-from snapShoting import Pozare
-from status import Offline, Online
+
+from status.Offline import Offline
+from status.Online import Online
 
 
-        
 while True:
-   Online(Pozare)
-   Offline()
-   
-
+    Offline()
+    Online()
